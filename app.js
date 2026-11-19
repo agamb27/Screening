@@ -1,6 +1,6 @@
 (function () {
   const S = window.SCREENERS;
-  const ORDER = ["aq10", "vparent", "vteacher", "vpfu", "vtfu"];
+  const ORDER = ["aq10", "asrs", "vparent", "vteacher", "vpfu", "vtfu"];
   const app = document.getElementById("app");
   let st = null; // current session state (memory only)
 
@@ -26,10 +26,6 @@
             <span class="name">${esc(S[k].title)}</span>
             <span class="who">${esc(S[k].who)}</span>
             <span class="time">about ${S[k].minutes} min</span></button></li>`).join("")}
-        <li class="disabled"><button disabled aria-disabled="true">
-            <span class="name">ASRS Adult ADHD Screener</span>
-            <span class="who">For adults to complete about themselves (coming soon)</span>
-            <span class="time">about 2 min</span></button></li>
       </ul>`;
     app.querySelectorAll("[data-open]").forEach(b => b.onclick = () => start(b.dataset.open));
     focusTop();
@@ -208,7 +204,7 @@
     doc.autoTable({ startY: y + 4, margin: { left: M, right: M }, theme: "grid", styles: tstyle, headStyles: head,
       head: [["Details", ""]], body: det, columnStyles: { 0: { cellWidth: 200, fontStyle: "bold" } } });
 
-    const isAQ = d.scoring === "aq10";
+    const isAQ = ["aq10", "asrs"].includes(d.scoring);
     d.sections.forEach(sec => {
       const body = sec.items.map(it => {
         const v = st.ans[it.n];

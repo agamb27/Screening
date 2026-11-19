@@ -79,6 +79,144 @@ window.SCREENERS = {
   "scoring": "aq10",
   "source": "AQ-10 © SBC/CA/BA/ARC/Cambridge University 1/5/12. Allison C, Auyeung B, and Baron-Cohen S (2012). Journal of the American Academy of Child and Adolescent Psychiatry 51(2):202-12. Recommended in NICE clinical guideline CG142."
  },
+ "asrs": {
+  "title": "ASRS (Adult ADHD)",
+  "subtitle": "Adult ADHD Self-Report Scale (ASRS-v1.1) Symptom Checklist",
+  "who": "For adults to complete about themselves",
+  "minutes": 4,
+  "intro": "Please answer the questions below, rating yourself on each criteria shown by using the scale on the right side of the page. As you answer each question, place an X in the box that best describes how you have felt and conducted yourself over the past 6 months. Please give this completed checklist to your healthcare professional to discuss during today’s appointment.",
+  "fields": [
+   [
+    "name",
+    "Patient Name",
+    "text"
+   ],
+   [
+    "dob",
+    "DOB",
+    "date"
+   ],
+   [
+    "date",
+    "Date",
+    "date"
+   ]
+  ],
+  "sections": [
+   {
+    "title": "Part A",
+    "scale": [
+     "Never",
+     "Rarely",
+     "Sometimes",
+     "Often",
+     "Very Often"
+    ],
+    "values": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "items": [
+     {
+      "n": 1,
+      "t": "How often do you have trouble wrapping up the final details of a project, once the challenging parts have been done?"
+     },
+     {
+      "n": 2,
+      "t": "How often do you have difficulty getting things in order when you have to do a task that requires organization?"
+     },
+     {
+      "n": 3,
+      "t": "How often do you have problems remembering appointments or obligations?"
+     },
+     {
+      "n": 4,
+      "t": "When you have a task that requires a lot of thought, how often do you avoid or delay getting started?"
+     },
+     {
+      "n": 5,
+      "t": "How often do you fidget or squirm with your hands or feet when you have to sit down for a long time?"
+     },
+     {
+      "n": 6,
+      "t": "How often do you feel overly active and compelled to do things, like you were driven by a motor?"
+     }
+    ]
+   },
+   {
+    "title": "Part B",
+    "scale": [
+     "Never",
+     "Rarely",
+     "Sometimes",
+     "Often",
+     "Very Often"
+    ],
+    "values": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "items": [
+     {
+      "n": 7,
+      "t": "How often do you make careless mistakes when you have to work on a boring or difficult project?"
+     },
+     {
+      "n": 8,
+      "t": "How often do you have difficulty keeping your attention when you are doing boring or repetitive work?"
+     },
+     {
+      "n": 9,
+      "t": "How often do you have difficulty concentrating on what people say to you, even when they are speaking to you directly?"
+     },
+     {
+      "n": 10,
+      "t": "How often do you misplace or have difficulty finding things at home or at work?"
+     },
+     {
+      "n": 11,
+      "t": "How often are you distracted by activity or noise around you?"
+     },
+     {
+      "n": 12,
+      "t": "How often do you leave your seat in meetings or other situations in which you are expected to remain seated?"
+     },
+     {
+      "n": 13,
+      "t": "How often do you feel restless or fidgety?"
+     },
+     {
+      "n": 14,
+      "t": "How often do you have difficulty unwinding and relaxing when you have time to yourself?"
+     },
+     {
+      "n": 15,
+      "t": "How often do you find yourself talking too much when you are in social situations?"
+     },
+     {
+      "n": 16,
+      "t": "When you’re in a conversation, how often do you find yourself finishing the sentences of the people you are talking to, before they can finish them themselves?"
+     },
+     {
+      "n": 17,
+      "t": "How often do you have difficulty waiting your turn in situations when turn taking is required?"
+     },
+     {
+      "n": 18,
+      "t": "How often do you interrupt others when they are busy?"
+     }
+    ]
+   }
+  ],
+  "scoring": "asrs",
+  "source": "The Adult ADHD Self-Report Scale (ASRS-v1.1) Symptom Checklist was developed in conjunction with the World Health Organization (WHO), and the Workgroup on Adult ADHD. A healthcare professional can use the ASRS v1.1 as a tool to help screen for ADHD in adult patients."
+ },
  "vparent": {
   "title": "Vanderbilt — Parent",
   "subtitle": "NICHQ Vanderbilt Assessment Scale — Parent Informant",

@@ -49,8 +49,26 @@
       rule: `A positive symptom is a 2 or 3. Each screen also requires a 4 or 5 on at least one Performance item (Q${cfg.perf[0]}–${cfg.perf[1]}). ADHD subtypes need 6 of 9 positives on Q1–9 and/or Q10–18.` };
   }
 
+
+  // ASRS-v1.1: shaded boxes are Sometimes+ for items 1, 2, 3, 9, 12, 16, 18 and Often+ for all others.
+  function asrs(a) {
+    const low = [1, 2, 3, 9, 12, 16, 18];
+    const shaded = q => a[q] != null && a[q] >= (low.includes(q) ? 2 : 3);
+    let pa = 0, pb = 0, missA = 0;
+    for (let q = 1; q <= 6; q++) { if (a[q] == null) missA++; if (shaded(q)) pa++; }
+    for (let q = 7; q <= 18; q++) if (shaded(q)) pb++;
+    return {
+      rows: [["Part A: answers in the darkly shaded boxes", `${pa} / 6`], ["Screening threshold (Part A)", "4 or more"],
+             ["Result", pa >= 4 ? "4 or more shaded: symptoms highly consistent with ADHD in adults; further investigation is warranted"
+                                 : (missA ? `Below threshold (${missA} Part A item(s) unanswered)` : "Below screening threshold")],
+             ["Part B: answers in the darkly shaded boxes (for discussion)", `${pb} / 12`]],
+      rule: "Part A is the screener: count answers in the darkly shaded boxes (Sometimes or more for items 1-3; Often or more for items 4-6). Four or more is highly consistent with adult ADHD. Part B items provide additional cues for the clinician to probe and are not scored against a cut-off."
+    };
+  }
+
   window.SCORE = {
     aq10,
+    asrs,
     vparent: a => vInitial(a, { perf: [48, 55], screens: [
       { name: "Oppositional-Defiant Disorder", lo: 19, hi: 26, need: 4 },
       { name: "Conduct Disorder", lo: 27, hi: 40, need: 3 },
